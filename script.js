@@ -17,8 +17,8 @@ const pinkHashColor = '#ffd4ff';
 recolorAllCardButton.addEventListener('click', () => {
   productCards.forEach(
     card => card.style.backgroundColor = pinkHashColor
-  );
-  });
+  )
+});
 
 // Переход на страницу Google
 
@@ -40,7 +40,7 @@ function openGoogle() {
 const mainTitle = document.querySelector('.product-card-selection');
 
 mainTitle.addEventListener('mouseover', () => {
-  console.log('Выберите свой продукт');
+  console.log(mainTitle.textContent);
 });
 
 // Кнопка со сменным цветом
