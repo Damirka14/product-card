@@ -8,7 +8,7 @@ showWeather('Алматы', -10);
 
 // Домашнее задание № 5.4
 
-const SPEED_LIGHT = '299792458 м/с';
+const SPEED_LIGHT = "299792458 м/с";
 
 function checkSpeed(speed){
     if (speed > SPEED_LIGHT) {
