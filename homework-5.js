@@ -1,23 +1,28 @@
 // Домашнее задание № 5.3
 
-const weather = (city, temperature) => {
+const showWeather = (city, temperature) => {
   console.log(`Сейчас в ${city} температура — ${temperature} градусов по Цельсию`);
 }
 
-weather('Алматы', -10);
+showWeather('Алматы', -10);
 
 // Домашнее задание № 5.4
 
-const SPEED_LIGHT = "299 792 458 м/с";
+const SPEED_LIGHT = '299792458 м/с';
 
-if (SPEED_LIGHT > "299 792 458 м/с") {
-  console.log('Сверхсветовая скорость');
-
-} else if (SPEED_LIGHT === "299 792 458 м/с") {
-  console.log('Скорость света');
-} else {
-  console.log('Субсветовая  скорость');
+function checkSpeed(speed){
+    if (speed > SPEED_LIGHT) {
+        console.log('Сверхсветовая скорость');
+    } else if (speed < SPEED_LIGHT) {
+        console.log('Субсветовая скорость');
+    } else {
+        console.log('Скорость света');
+    }
 }
+
+checkSpeed("399792458 м/с")
+checkSpeed("199792458 м/с")
+checkSpeed("299792458 м/с")
 
 // Домашнее задание № 5.5
 
