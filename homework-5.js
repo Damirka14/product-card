@@ -10,7 +10,7 @@ showWeather('Алматы', -10);
 
 const SPEED_LIGHT = "299792458 м/с";
 
-function checkSpeed(speed){
+function compareSpeed(speed){
     if (speed > SPEED_LIGHT) {
         console.log('Сверхсветовая скорость');
     } else if (speed < SPEED_LIGHT) {
@@ -20,9 +20,9 @@ function checkSpeed(speed){
     }
 }
 
-checkSpeed("399792458 м/с")
-checkSpeed("199792458 м/с")
-checkSpeed("299792458 м/с")
+compareSpeed("399792458 м/с");
+compareSpeed("199792458 м/с");
+compareSpeed("299792458 м/с");
 
 // Домашнее задание № 5.5
 
