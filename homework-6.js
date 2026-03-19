@@ -1,6 +1,6 @@
 // Домашнее задание № 5.3
 
-const showResume = {
+const user = {
   name: "Ислам",
   surname: "Исламов",
   email: "islam@icloud.com",
@@ -12,7 +12,7 @@ const showResume = {
   status: "В браке"
 }
 
-console.log(showResume);
+console.log(user);
 
 // Домашнее задание № 5.4
 
@@ -24,41 +24,46 @@ let car = {
   gearbox:"Механическая"
 }
 
-car.owner = showResume;
+car.owner = user;
 
 console.log(car);
 
 // Домашнее задание № 5.5
 
-function checkMaxSpeed(auto) { 
-  if (!car.hasOwnProperty('maxSpeed')) {
-    car.maxSpeed = 150;
-    console.log('maxSpeed');
+function addMaxSpeed(carObj) { 
+  if (!carObj.hasOwnProperty('maxSpeed')) {
+      carObj.maxSpeed = 150;
   } else {
-    console.log(maxSpeed);
-      return auto;
-  };
+      console.log(carObj.maxSpeed);
+  }
+  return carObj;
 }
 
-checkMaxSpeed(car);
+addMaxSpeed(car);
 console.log(car);
 
 // Домашнее задание № 5.6
+
+const person = {
+  name: "Ислам",
+  age: 44
+}
 
 function getPropertyValue(obj, key) {
     console.log(obj[key]);
 }
 
-getPropertyValue(showResume, "name");
+getPropertyValue(person, "name");
 
 // Домашнее задание № 5.7
-const showListFruits = [ "яблоко", "груша", "апельсин", "лимон", "киви" ]
 
-console.log(showListFruits);
+const fruits = [ "яблоко", "груша", "апельсин", "лимон", "киви" ];
+
+console.log(fruits);
 
 // Домашнее задание № 5.8
 
-const showCarsVaz = [
+const carsVaz = [
   {
     brand: "Ваз",
     model: 2101,
@@ -84,7 +89,7 @@ const showCarsVaz = [
   }
 ]
 
-showCarsVaz.push (
+carsVaz.push (
   {
     brand: "Ваз",
     model: 2107,
@@ -94,11 +99,11 @@ showCarsVaz.push (
   }
 );
 
-console.log(showCarsVaz);
+console.log(carsVaz);
 
 // Домашнее задание № 5.9
 
-const showCarsLada = [
+const carsLada = [
   {
     brand: "Лада",
     model: "Приора",
@@ -122,17 +127,17 @@ const showCarsLada = [
     color: "Серый",
     gearbox:"Автомат"
   },
-]
+];
 
-console.log(showCarsLada);
+console.log(carsLada);
 
-const showAllCars = [ ...showCarsVaz, ...showCarsLada ]
+const allCars = [ ...carsVaz, ...carsLada ];
 
-console.log(showAllCars);
+console.log(allCars);
 
 // Домашнее задание № 5.10
 
-function markRareCars(carsArray) {
+function getRareCars(carsArray) {
   return carsArray.map(car => {
     return {
       ...car,
@@ -141,6 +146,6 @@ function markRareCars(carsArray) {
   });
 }
 
-const carsWithStatus = markRareCars(showAllCars)
+const carsWithStatus = getRareCars(allCars);
 
 console.log(carsWithStatus);
