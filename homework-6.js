@@ -89,7 +89,7 @@ const carsVaz = [
   }
 ]
 
-carsVaz.push (
+carsVaz.push(
   {
     brand: "Ваз",
     model: 2107,
