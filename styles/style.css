@@ -57,7 +57,7 @@
   background-color: #ff00ff;
 }
 
-.product-card-wrapeer {
+.product-card-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -83,7 +83,7 @@
 
 .product-card__for-skin {
   font-size: 12px;
-  line-height: 24x;
+  line-height: 24px;
   text-transform: uppercase;
   color: #A5A3B9;
   margin-top: 30px;
