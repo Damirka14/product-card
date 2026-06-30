@@ -1,6 +1,7 @@
 import { products } from "./products.js";
 
 // Домашнее задание Уровень 1: № 8.3
+// По аналогии из лекции — создать и реализовать шаблон для продуктовых карточек.
 
 const productCardTemplate = document.getElementById('product-card-template');
 const productsWrapper = document.querySelector('.product-card-wrapper');
@@ -25,15 +26,20 @@ product.composition.forEach(item => {
 };
 
 // Домашнее задание Уровень 1: № 8.4
+// Используя метод .reduce(), получить массив объектов, где ключем является название продукта, а значением - его описание
 
-const productDescriptions = products.reduce((acc, product) => {
-  acc[product.title] = product.description;
+const getProductDescriptions = products.reduce((acc, product) => {
+  acc.push({ [product.title]: product.description });
   return acc;
-}, {});
+}, []);
 
-console.log(productDescriptions);
+console.log(getProductDescriptions);
 
 // Домашнее задание Уровень 1: № 8.5
+// Реализовать функцию, которая при старте страницы выводит сообщение (через функцию prompt)
+// "Сколько карточек отобразить? От 1 до 5" и в зависимости от результата - будет выводить введенное количество.
+// Должна быть защита от ввода других значений (проверка if).
+// То-есть: у нас будет 2 функции, одна возвращает количество карточек, которое нужно ввести, другая - рендерить эти карточки (принимая массив аргументом)
 
 function getProductsCount() {
   while (true) {
@@ -58,7 +64,7 @@ function renderProducts(products, limit) {
 
 const limit = getProductsCount();
 if (limit === null) {
-  renderProducts(products, 5);
+  renderProducts(products, null);
 } else {
   renderProducts(products, limit);
 };
