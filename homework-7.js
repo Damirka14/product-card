@@ -1,6 +1,8 @@
 import { socialComments } from "./comments.js";
 
 // Домашнее задание Уровень 1: № 7.2
+// Создать массив чисел от 1 до 10.
+// Отфильтровать его таким образом, что бы мы получил массив чисел, начиная с 5.
 
 const numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 
@@ -9,6 +11,8 @@ const filteredNumbers = numbers.filter(number => number >= 5);
 console.log(filteredNumbers);
 
 // Домашнее задание Уровень 1: № 7.3
+// Создать массив строк, относящихся к любой сущности (название фильмов/книг, кухонные приборы, мебель и т.д.)
+// Проверить, есть ли в массиве какая-то определенная сущность.
 
 const kitchenTools = [ 'Ложка', 'Вилка', 'Нож' ];
 
@@ -17,6 +21,8 @@ const hasKnife = kitchenTools.includes('Нож');
 console.log(hasKnife);
 
 // Домашнее задание Уровень 1: № 7.4
+// Написать функцию, которая аргументом будет принимать массив и изменять его порядок на противоположный ("переворачивать") .
+// Два вышеуказанных массива с помощью этой функции перевернуть.
 
 const reversedNumbers = numbers.reverse(number => number);
 
@@ -27,12 +33,15 @@ const reversedKitchenTools = kitchenTools.reverse(tool => tool);
 console.log(reversedKitchenTools);
 
 // Домашнее задание Уровень 2: № 7.7
+// Вывести в консоль массив тех комментариев, почта пользователей которых содержит ".com"
 
 const comEmails = socialComments.filter(comment => comment.email.includes('.com'));
 
 console.log(comEmails);
 
 // Домашнее задание Уровень 2: № 7.8
+// Перебрать массив таким образом,
+// что бы пользователи с id меньше или равно 5 имели postId: 2, а те, у кого id больше 5, имели postId: 1
 
 const getComments = socialComments.map(comment => {
   return {...comment, postId: comment.id <= 5 ? 2 : 1};
@@ -41,6 +50,7 @@ const getComments = socialComments.map(comment => {
 console.log(getComments);
 
 // Домашнее задание Уровень 2: № 7.9
+// Перебрать массив, что бы объекты состояли только из айди и имени
 
 const simplifiedComments = socialComments.map(comment => {
   return { id: comment.id , name: comment.name };
@@ -49,6 +59,8 @@ const simplifiedComments = socialComments.map(comment => {
 console.log(simplifiedComments);
 
 // Домашнее задание Уровень 2: № 7.10
+// Перебираем массив, добавляем объектам свойство isInvalid и проверяем:
+// если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false.
 
 const validatedComments = socialComments.map(comment => {
   return { ...comment,isInvalid: comment.body.length > 180 };
@@ -57,6 +69,8 @@ const validatedComments = socialComments.map(comment => {
 console.log(validatedComments);
 
 // Домашнее задание Уровень 3: № 7.11
+// Почитать про метод массива reduce.
+// Используя его, вывести массив почт и провернуть тоже самое с помощью метода map
 
 const getEmailsCommentsReduce = socialComments.reduce((acc, comment) => {
   acc.push(comment.email);
@@ -70,6 +84,7 @@ const getEmailsCommentsMap = socialComments.map(comment => comment.email);
 console.log(getEmailsCommentsMap);
 
 // Домашнее задание Уровень 3: № 7.12
+// Почитать про методы toString(), join() и перебрав массив с задания №11, привести его к строке.
 
 const emailsString = getEmailsCommentsReduce.toString();
 

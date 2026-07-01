@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<body lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,15 @@
   <div class="all-elements">
     <div class="background-picture__img"></div>
     <h1 class="product-card-selection">Выбери свой продукт</h1>
-    <div class="button">
+    <div class="buttons">
       <button class="style-button" id="recolor-first-card-button">Перекрасить фон первой карточки</button>
       <button class="style-button" id="recolor-all-card-button">Перекрасить фон всех карточек</button>
       <button class="style-button" id="open-google-button">Открыть Google</button>
       <button class="style-button" id="recolor-button">Поменять цвет кнопки</button>
+
+<!-- // Домашнее задание № 9.5 Уровень 2: Создание кнопки регистрации -->
+      <button class="style-button" id="registration-button">Регистрация</button>
+
     </div>
     <div class="product-card-wrapper">
       <template id="product-card-template">
@@ -36,10 +40,89 @@
       </template>
     </div>
   </div>
+
+<!-- // Домашнее задание № 9.3 Уровень 1: Сверстать данный footer
+  (https://www.figma.com/design/H8BBp1sq6u6N0MqdF9hrsq/Untitled?node-id=0-1&t=xbP3bxfa7ojVOSJk-1),
+  используя семантические теги (footer, nav и т.д. -->
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-title-wrapper">
+        <h3 class="footer-title">Product Cards</h3>
+        <p class="footer-title__text">У нас самые лучшие продукты для кожи!</p>
+      </div>
+      <div class="footer-subscription-wrapper">
+        <p class="footer-subscription__text">Подпишись на наши акции:</p>
+        <form class="input-group" id="email-form">
+          <input class="subscription-input" type="email" name="email" placeholder="Введи Email..." required>
+          <div class="input-divider"></div>
+          <button class="input-button" type="submit">Подписаться</button>
+        </form>
+      </div>
+      <div class="nav-wrapper">
+        <nav class="nav-wrapper-container">
+          <ul class="nav-wrapper-container__description">
+            <li class="nav-title">Быстрые ссылки</li>
+            <li class="nav-text">Главная</li>
+            <li class="nav-text">Магазин</li>
+            <li class="nav-text">Контакты</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-social-icons">
+        <img class="footer__social-icons__telegram" src="/images/telegram-icon.png" alt="Telegram">
+        <img class="footer__social-icons__vk" src="/images/vk-icon.png" alt="VK" class="footer__social-icons__vk">
+      </div>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-bottom">
+      <p class="footer-bottom__text">www.product-cards.com©all right reserve</p>
+    </div>
+  </footer>
   <script src="./script.js"></script>
   <script src="./homework-5.js"></script>
   <script src="./homework-6.js"></script>
+
+<!-- Создать файл "homework-7.js", подключить его в HTML.
+  Добавляем новый атрибут - type = module, что бы была возможность импорта (далее увидим зачем) -->
   <script type="module" src="./homework-7.js"></script>
   <script type="module" src="./homework-8.js"></script>
+  <script type="module" src="./homework-9.js"></script>
+
+<!-- // Домашнее задание № 9.5 Уровень 2: Создание модального окна -->
+  <div class="overlay" id="modal-overlay">
+    <div class="modal" id="modal-window">
+      <button id="modal-exit-button" type="submit">X</button>
+      <h3 class="modal-title">Регистрация</h3>
+
+<!-- // Домашнее задание № 9.6 Уровень 2: Создание формы для регистрации внутри модального окна -->
+      <form class="registration-form" id="registration-form">
+        <label>
+          Имя
+          <input class="name" type="text" name="name" placeholder="Введите имя" required>
+        </label>
+        <label>
+          Фамилия
+          <input class="surname" type="text" name="surname" placeholder="Введите фамилию" required>
+        </label>
+        <label>
+          Дата рождения
+          <input class="birth-date" type="date" name="birth-date" placeholder="Укажите дату рождения" required>
+        </label>
+        <label>
+          Логин
+          <input class="login" type="text" name="login" placeholder="Введите логин" required>
+        </label>
+        <label>
+          Пароль
+          <input class="password" type="password" name="password" placeholder="Введите пароль" required minlength="6">
+        </label>
+        <label>
+          Подтвердить пароль
+          <input class="password-confirm" type="password" name="password-confirm" placeholder="Повторите пароль" required>
+        </label>
+        <button class="registration-button" type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html> 
