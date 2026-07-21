@@ -55,7 +55,7 @@ jeep.toggleFourWheelDrive();
 //  Как? Используя внутренние методы - мы можем управлять через айди формы получением значений и всем, что должна делать модалка.
 
 import { Modal } from "./modal.js";
-import { Form } from "./Form.js";
+import { Form } from "./form.js";
 
 let user;
 
